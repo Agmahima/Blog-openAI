@@ -19,6 +19,7 @@ app.use(cors({
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true // If you're using cookies for authentication
 }));
+app.options('*', cors()); // Allow preflight requests from any origin
 app.use(bodyParser.json())
 
 app.use("/api/user",userRoutes);
