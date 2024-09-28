@@ -13,7 +13,7 @@ export const BlogSummary = () => {
         const token = sessionStorage.getItem('token');
         console.log(token);
 
-        const response = await axios.get("https://blog-open-ai-jqd1.vercel.app/api/blogInfo/user-blogs", {
+        const response = await axios.get("https://blog-openai-6zr3.onrender.com/api/blogInfo/user-blogs", {
       headers: { Authorization: `Bearer ${token}` }
     });
         setBlogs(response.data);
@@ -35,7 +35,7 @@ export const BlogSummary = () => {
         const token = sessionStorage.getItem('token');
         console.log(`Token : ${token}`);
         console.log(`Deleting blog id : ${id}`);
-        await axios.delete(`https://blog-open-ai-jqd1.vercel.app/api/blogInfo/delete/${id}`, {
+        await axios.delete(`https://blog-openai-6zr3.onrender.com/api/blogInfo/delete/${id}`, {
           headers : { Authorization : `Bearer ${token}`}
         });
         setBlogs(blogs.filter(blog => blog._id !== id)); // Remove blog from the list

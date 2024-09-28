@@ -14,7 +14,7 @@ export const Login = () => {
     
     try {
       console.log("Form data:", { email: userId, password });
-      const endpoint = isSignup ? 'https://blog-open-ai-jqd1.vercel.app/api/user/signup' : 'https://blog-open-ai-jqd1.vercel.app/api/auth/login';  // Change the endpoint based on form type
+      const endpoint = isSignup ? 'https://blog-openai-6zr3.onrender.com/api/user/signup' : 'https://blog-openai-6zr3.onrender.com/api/auth/login';  // Change the endpoint based on form type
       const response = await axios.post(endpoint, { email: userId, password });
       
       if (response) {
