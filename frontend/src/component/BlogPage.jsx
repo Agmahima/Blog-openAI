@@ -13,7 +13,7 @@ const BlogPage = ({ editable }) => {
     const fetchBlogPost = async () => {
       try {
         const token = sessionStorage.getItem('token');
-        const response = await axios.get(`http://localhost:8080/api/blogInfo/${id}`, {
+        const response = await axios.get(`https://blog-open-ai-jqd1.vercel.app/api/blogInfo/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`, // Include token for authorization
           },
@@ -38,7 +38,7 @@ const BlogPage = ({ editable }) => {
     setError(null); // Clear any previous errors
     try {
       const token = sessionStorage.getItem('token');
-      await axios.put(`http://localhost:8080/api/blogInfo/${id}`, blogPost, {
+      await axios.put(`https://blog-open-ai-jqd1.vercel.app/api/blogInfo/${id}`, blogPost, {
         headers: {
           Authorization: `Bearer ${token}`, // Include token for authorization
         },

@@ -19,7 +19,7 @@ export const Main = () => {
     try {
       console.log("Sending request to backend with prompt:", prompt);
       const token = sessionStorage.getItem('token');
-      const response = await axios.post('http://localhost:8080/api/blog/generate-blog', { prompt, token });
+      const response = await axios.post('https://blog-open-ai-jqd1.vercel.app/api/blog/generate-blog', { prompt, token });
       console.log("Response from backend:", response.data);
 
       if (response) {
@@ -38,7 +38,7 @@ export const Main = () => {
   const handleSave = async () => {
     const token = sessionStorage.getItem('token');
     try {
-      await axios.post('http://localhost:8080/api/save', { title: prompt, content: blogPost, token });
+      await axios.post('https://blog-open-ai-jqd1.vercel.app/api/save', { title: prompt, content: blogPost, token });
       alert('Blog post saved successfully!');
       setBlogPost(''); // Clear the input fields after saving
       setPrompt('');
