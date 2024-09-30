@@ -29,9 +29,10 @@ export const Login = () => {
         Navigate('/');
       }
     } catch (error) {
-      console.log(error.message);
-      
+      setErrorMessage("Credentials not correct"); 
     }
+      
+    
   };
 
   return (
