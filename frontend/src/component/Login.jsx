@@ -14,7 +14,7 @@ export const Login = () => {
     
     try {
       console.log("Form data:", { email: userId, password });
-      const endpoint = isSignup ? 'https://blog-openai-6zr3.onrender.com/api/user/signup' : 'https://blog-openai-6zr3.onrender.com/api/auth/login';  // Change the endpoint based on form type
+      const endpoint = isSignup ? 'http://localhost:8080/api/user/signup' : 'http://localhost:8080/api/auth/login';  // Change the endpoint based on form type
       const response = await axios.post(endpoint, { email: userId, password });
       
       if (response) {
@@ -29,10 +29,12 @@ export const Login = () => {
         Navigate('/');
       }
     } catch (error) {
-      setErrorMessage("Credentials not correct"); 
-    }
+      console.log(error.message);
+      console.log(token);
+      setErrorMessage("creadentials are not correct");
+
       
-    
+    }
   };
 
   return (
