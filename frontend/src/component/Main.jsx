@@ -19,7 +19,7 @@ export const Main = () => {
     try {
       console.log("Sending request to backend with prompt:", prompt);
       const token = sessionStorage.getItem('token');
-      const response = await axios.post('https://localhost:8080/api/blog/generate-blog', { prompt, token });
+      const response = await axios.post('https://blog-openai-6zr3.onrender.com/api/blog/generate-blog', { prompt, token });
       console.log("Response from backend:", response.data);
 
       if (response) {
