@@ -13,7 +13,7 @@ export const BlogSummary = () => {
         const token = sessionStorage.getItem('token');
         console.log(token);
 
-        const response = await axios.get("http://localhost:8080/api/blogInfo/user-blogs", {
+        const response = await axios.get("https://blog-openai-6zr3.onrender.com/api/blogInfo/user-blogs", {
       headers: { Authorization: `Bearer ${token}` }
     });
         setBlogs(response.data);

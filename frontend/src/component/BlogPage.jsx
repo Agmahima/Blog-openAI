@@ -13,7 +13,7 @@ const BlogPage = ({ editable }) => {
     const fetchBlogPost = async () => {
       try {
         const token = sessionStorage.getItem('token');
-        const response = await axios.get(`http://localhost:8080/api/blogInfo/${id}`, {
+        const response = await axios.get(`https://blog-openai-6zr3.onrender.com/api/blogInfo/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`, // Include token for authorization
           },

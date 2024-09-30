@@ -30,7 +30,7 @@ export const Summary = () => {
     const confirmed = window.confirm("Are you sure you want to delete this blog?");
     if (confirmed) {
       try {
-        await axios.delete(`http://localhost:8080/api/blog/delete/${id}`);
+        await axios.delete(`https://blog-openai-6zr3.onrender.com/api/blog/delete/${id}`);
         setBlogs(blogs.filter(blog => blog._id !== id)); // Remove blog from the list
       } catch (error) {
         console.error("Error deleting blog:", error);

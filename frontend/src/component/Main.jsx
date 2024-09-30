@@ -38,7 +38,7 @@ export const Main = () => {
   const handleSave = async () => {
     const token = sessionStorage.getItem('token');
     try {
-      await axios.post('http://localhost:8080/api/save', { title: prompt, content: blogPost, token });
+      await axios.post('https://blog-openai-6zr3.onrender.com/api/save', { title: prompt, content: blogPost, token });
       alert('Blog post saved successfully!');
       setBlogPost(''); // Clear the input fields after saving
       setPrompt('');
